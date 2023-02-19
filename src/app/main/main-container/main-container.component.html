@@ -1,0 +1,33 @@
+<div class="main_container">
+  <div class="form_container">
+    <div class="form_box">
+      <div class="input-group mb-3">
+        <input
+          dir="rtl"
+          type="search"
+          id="name"
+          class="form-control"
+          class="form-control"
+          placeholder="הזן שם עיר"
+          name="Inputvalue"
+          #InputCityValue
+          (change)="onChange(InputCityValue.value, InputAreaValue.value)"
+          required
+        />
+      </div>
+      <select
+        #InputAreaValue
+        (change)="onChange(InputCityValue.value, InputAreaValue.value)"
+        dir="rtl"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option selected value="">חיפוש לפי אזור - (ללא אזור)</option>
+        <option *ngFor="let area of areas.Data" value="{{ area }}">
+          {{ area }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <app-main-gallery-items [garageList]="garageList"></app-main-gallery-items>
+</div>

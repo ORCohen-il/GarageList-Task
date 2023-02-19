@@ -1,0 +1,6 @@
+<div class="gallery">
+  <div *ngIf="garageList.length <= 0" class="loading-icon"></div>
+  <div *ngFor="let item of garageList">
+    <app-gallery-card-img [item]="item"></app-gallery-card-img>
+  </div>
+</div>
